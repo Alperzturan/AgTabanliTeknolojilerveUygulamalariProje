@@ -1,11 +1,11 @@
 ﻿.footer {
-  bottom: 0;
   width: 100%;
   white-space: nowrap;
   line-height: 60px;
   background-color: #2B1E16;
   color: #FAF6F0;
 }
+
 .btn-color {
   background-color: #D97706;
 }
