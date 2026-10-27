@@ -1,18 +1,22 @@
 using Michelangelo_s_Board_Game_Cafe.Data;
 using Microsoft.EntityFrameworkCore;
 
+using dotenv.net; 
+DotEnv.Load(); 
+
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 
 
+var connectionString = Environment.GetEnvironmentVariable("DB_CONNECTION");
 
 
 builder.Services.AddDbContext<CafeDbContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
-
-
+    options.UseNpgsql(connectionString));
 
 
 
