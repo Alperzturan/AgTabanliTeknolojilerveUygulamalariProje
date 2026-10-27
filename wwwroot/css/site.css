@@ -62,3 +62,36 @@ body {
   opacity: 1;
   max-height: 120px;
 }
+
+.game-cards {
+  border: solid #2B1E16 3px;
+  border-radius: 4px;
+  height: auto;
+  background-color: #FFFFFF;
+  max-width: 250px;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  padding: 10px;
+  position: relative;
+}
+
+.badge-pos {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.masa-cards {
+  border: solid #2B1E16 3px;
+  border-radius: 4px;
+  height: auto;
+  background-color: #FFFFFF;
+  max-width: 250px;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  padding: 10px;
+  position: relative;
+}
