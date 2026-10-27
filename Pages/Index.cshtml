@@ -9,10 +9,10 @@
     <p class="lead">Çeşitli oyunlar oynayabileceğiniz kafemizi daha kolay keşfedebilmeniz ve sıkıntı çekmeden masa rezerve edebilmeniz için geliştirdiğimiz websitemize hoşgeldiniz</p>
     <div class="list-items-shape">
         <button class="btn-color btn-shape">
-            <a class="text-decoration-none text-color" asp-area="" asp-page="">Oyunları İncele</a>
+            <a class="text-decoration-none text-color" asp-area="" asp-page="/Oyunlar">Oyunları İncele</a>
         </button>
         <button class="btn-color btn-shape">
-            <a class="text-decoration-none text-color" asp-area="" asp-page="">Masa Rezerve Et</a> 
+            <a class="text-decoration-none text-color" asp-area="" asp-page="/Rezervasyon">Masa Rezerve Et</a> 
         </button>
     </div>
 </div>
@@ -24,9 +24,11 @@
     <div class="
         text-box
         m-1">
-        <p class="
+        <a class="
             fw-bold
-            fs-4">Oyun Kütüphanesini Keşfet</p>
+            fs-4
+            text-decoration-none
+            text-color" asp-area="" asp-page="/Oyunlar">Oyun Kütüphanesini Keşfet</a>
         <p class="
             hidden-info
         ">Kafedeki kutu oyunlarını kategorisine ve oyuncu sayısına göre önceden incele.</p>
@@ -34,9 +36,11 @@
     <div class="
         text-box
         m-1">
-        <p class="
+        <a class="
             fw-bold
-            fs-4">Masanı ve Oyununu Ayırt</p>
+            fs-4
+            text-decoration-none
+            text-color" asp-area="" asp-page="/Rezervasyon">Masanı ve Oyununu Ayırt</a>
         <p class="
             hidden-info
         ">Geleceğin tarih ve saati seçerek uygun masayı ve oynamak istediğin oyunu rezerve et.</p>
@@ -44,9 +48,11 @@
     <div class="
         text-box
         m-1">
-        <p class="
+        <a class="
             fw-bold
-            fs-4">Gamemaster Desteği</p>
+            fs-4
+            text-decoration-none
+            text-color" asp-area="" asp-page="/Oyunlar">Gamemaster Desteği</a>
         <p class="
             hidden-info
         ">Kafe çalışanlarımızdan oyun kuralları ve masa kurulumu konusunda anında destek al.</p>
