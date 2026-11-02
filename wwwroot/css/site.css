@@ -96,7 +96,7 @@ body {
   position: relative;
 }
 
-.text-box{
+.membership-box{
   background-color: #FFFFFF;
   color: #2B1E16;
   margin: 30px auto;
@@ -115,7 +115,7 @@ body {
   box-shadow: 0 0 0 4px #D97706;
 }
 
-.form-floating {
+.form-floating{
   margin: 5px;
   color: gray;
 }
