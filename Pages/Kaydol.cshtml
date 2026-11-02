@@ -4,28 +4,33 @@
     ViewData["Title"] = "Kayıt Ol";
 }
 
-<form class="text-box" method="post">
+<form class="membership-box" method="post">
     <h1>Kayıt Ol</h1>
     <div class="d-flex flex-column mx-4 my-3 justify-content-center">
         <div class="form-floating">
-            <input class="form-control" type="text" id="ad" placeholder="">
+            <input class="form-control" required type="text" id="ad" placeholder="">
             <label for="ad">ad-soyad</label>
+            <span class="text-danger"></span>
         </div>
         <div class="form-floating">
-            <input class="form-control" type="email" id="email" placeholder="">
+            <input class="form-control" required type="email" id="email" placeholder="">
             <label for="email">e-mail</label>
+            <span class="text-danger"></span>
         </div>
         <div class="form-floating">
             <input class="form-control" type="tel" id="tel" placeholder="">
             <label for="tel">telefon numarası</label>
+            <span class="text-danger"></span>
         </div>
         <div class="form-floating">
-            <input class="form-control" type="password" id="pw" placeholder="">
+            <input class="form-control" required minlength="6" type="password" id="pw" placeholder="">
             <label for="pw">şifre</label>
+            <span class="text-danger"></span>
         </div>
         <div class="form-floating">
-            <input class="form-control" type="password" id="pw-kontrol" placeholder="-">
+            <input class="form-control" required type="password" id="pw-kontrol" placeholder="-">
             <label for="pw-kontrol">şifre(tekrar)</label>
+            <span class="text-danger"></span>
         </div>          
     </div>
     <button class="btn-color btn-shape" type="submit">Kayıt Ol</button>
@@ -34,3 +39,5 @@
         <button class="btn-color btn-shape" type="button" onclick="location.href='/GirisYap'" formnovalidate>Giriş Yap</button>
     </div>
 </form>
+
+@section Scripts { <partial name="_ValidationScriptsPartial" /> }
