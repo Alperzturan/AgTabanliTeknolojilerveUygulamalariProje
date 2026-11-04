@@ -11,7 +11,9 @@
         <p>telefon</p>
         <p>kayıttarihi</p>
         <p>müşteri/çalışan</p>
-        <button>çıkış yap</button>
+        <form method="post" asp-page-handler="Logout">
+            <button type="submit" class="btn btn-danger">Çıkış Yap</button>
+        </form>
     </div>
     <div class="profile-box">
         <p>aktifrezervasyonalarım</p>

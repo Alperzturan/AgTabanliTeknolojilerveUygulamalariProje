@@ -57,19 +57,27 @@
                             <a class="nav-link" asp-area="" asp-page="/Profil">Profil</a>
                         </li>
                     </ul>
-                    <div>
-                        <ul class="list-items-shape">
-                            <li class="
-                                btn-shape 
-                                btn-color">
-                                <a class="
-                                    nav-link 
-                                    text-dark" asp-area="" asp-page="/Kaydol">Kaydol</a>
+                     <!--Login Sonrası Butonlar Değişir-->    
+                        <div>
+                    <ul class="list-items-shape">
+                        @if (User.Identity?.IsAuthenticated == true)
+                        {
+                            <li class="btn-shape btn-color">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Profil">
+                                    👤 @User.Identity.Name
+                                </a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="btn-shape btn-color">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Kaydol">Kaydol</a>
                             </li>
                             <li class="btn-shape btn-color">
                                 <a class="nav-link text-dark" asp-area="" asp-page="/GirisYap">Giriş Yap</a>
                             </li>
-                        </ul>
+                        }
+                    </ul>
                     </div>
                 </div>
             </div>
