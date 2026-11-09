@@ -8,6 +8,20 @@
     d-flex
     justify-content-center">Kutu Oyunu Kütüphanesi</h1>
 
+<div class="my-4 d-flex">
+    <input class="search" type="search" placeholder="Bir oyun ara...">
+    <div class="input-group ms-2">
+        <span class="input-group-text"><i class="bi bi-funnel"></i></span>
+        <select class="filter" name="filter" id="filter">
+            <option value="">Tüm Kategoriler (Filtre)</option>
+            @* @foreach (var cat in Model.Categories) {
+                <option value="@cat.Id">@cat.Name</option>
+            } *@
+        </select>
+    </div>
+    
+</div>
+
 <div class="game-cards">
     <p class="badge-pos">kategori</p>
     <p class="d-flex justify-content-center">Oyun İsmi</p>

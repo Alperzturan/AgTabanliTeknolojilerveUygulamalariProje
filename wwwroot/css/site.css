@@ -115,12 +115,12 @@ body {
   box-shadow: 0 0 0 4px #D97706;
 }
 
-.form-floating{
+.form-floating {
   margin: 5px;
   color: gray;
 }
 
-.profile-box{
+.profile-box {
   background-color: #FFFFFF;
   color: #2B1E16;
   margin: 10px;
@@ -132,4 +132,22 @@ body {
   justify-content: center;
   width: 70dvw;
   max-width: 420px;
+}
+
+.search {
+  width: 500px;
+}
+
+.filter {
+  color: #2B1E16;
+  background-color: #FFFFFF;
+  border: 1px solid #2B1E16;
+  border-left: none;
+}
+
+.input-group-text {
+  color: #2B1E16;
+  background-color: #D97706;
+  border: 1px solid #2B1E16;
+  border-right: none;
 }
