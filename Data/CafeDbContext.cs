@@ -110,7 +110,7 @@ namespace Michelangelo_s_Board_Game_Cafe.Data
                     TotalCopies = 2,
                     AvailableCopies = 2,
                     Description = "İki casus liderinin kelime ipuçlarıyla takımlarına ajanlarını buldurma oyunu.",
-                    ImageUrl = "https://upload.wikimedia.org/wikipedia/en/7/77/Codenames_game_box.jpg"
+                    ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/b/b0/Codenames_board_game.jpg"
                 },
                 new BoardGame
                 {
@@ -123,7 +123,7 @@ namespace Michelangelo_s_Board_Game_Cafe.Data
                     TotalCopies = 2,
                     AvailableCopies = 2,
                     Description = "Malikanedeki cinayeti, faili, suç aletini ve odayı ilk tahmin eden dedektiflik oyunu.",
-                    ImageUrl = "https://upload.wikimedia.org/wikipedia/en/9/90/Cluedo_box_art.jpg"
+                    ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/4/4c/Cluedo_Clue_pack_logo.png"
                 }
             );
         }
