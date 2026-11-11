@@ -4,8 +4,6 @@
     ViewData["Title"] = "Oyunlar";
 }
 
-
-
 <h1 class="
     d-flex
     justify-content-center">Kutu Oyunu Kütüphanesi</h1>
@@ -22,61 +20,89 @@
             <i class="bi bi-funnel"></i>
         </button>
         <div class="dropdown-menu p-3 shadow">
-            <div class="d-flex gap-4">
-                <div>
+            <div class="d-grid gap-3 text-nowrap" style="grid-template-columns: repeat(3, 1fr);">
+                <div class="border-end pe-3">
                     <p class="fw-bold mb-1">Kategori</p>
-                    <div class="form-check">
-                        <input class="form-check-input filter" 
+                    @foreach (var cat in Model.Categories)
+                    {
+                        <div class="form-check">
+                            <input class="form-check-input filter" 
                                 type="checkbox" 
-                                value="strateji" 
+                                value="@cat.Name.ToLower()" 
                                 name="category"
-                                id="c1">
-                        <label class="form-check-label" for="c1">Strateji</label>
-                    </div>
+                                id="cat-@cat.Id">
+                            <label class="form-check-label" for="cat-@cat.Id">@cat.Name</label>
+                        </div>
+                    }
                 </div>
-                <div>
+                <div class="border-end pe-3">
                     <p class="fw-bold mb-1">Zaman</p>
-                    <div class="form-check">
-                        <input class="form-check-input filter" 
+                    @{
+                        var zamanlar = new[] {
+                            ("kisa", "Kısa (<30dk)"),
+                            ("orta", "Orta (30-60dk)"),
+                            ("uzun", "Uzun (>60dk)")
+                        };
+                    }
+                    @foreach (var (kod, etiket) in zamanlar)
+                    {
+                        <div class="form-check">
+                            <input class="form-check-input filter" 
                                 type="checkbox" 
-                                value="orta" 
+                                value="@kod" 
                                 name="time"
-                                id="c2">
-                        <label class="form-check-label" for="c2">Orta</label>
-                    </div>
+                                id="time-@kod">
+                            <label class="form-check-label" for="time-@kod">@etiket</label>
+                        </div>
+                    }
                 </div>
                 <div>
                     <p class="fw-bold mb-1">Oyuncu Sayısı</p>
-                    <div class="form-check">
-                        <input class="form-check-input filter" 
+                    @{
+                        var oyuncular = new[] {
+                            ("1-2", "1-2"),
+                            ("3-4", "3-4"),
+                            ("5+", "5+")
+                        };
+                    }
+                    @foreach (var (kod, etiket) in oyuncular)
+                    {
+                        <div class="form-check">
+                            <input class="form-check-input filter" 
                                 type="checkbox" 
-                                value="1-2"
+                                value="@kod"
                                 name="players"
-                                id="c3">
-                        <label class="form-check-label" for="c3">1-2</label>
-                    </div>
+                                id="player-@kod">
+                            <label class="form-check-label" for="player-@kod">@etiket</label>
+                        </div>
+                    }
                 </div>
             </div>
-            
         </div>
-        
     </div>
 </div>
+<div class="d-flex">
+    @foreach (var game in Model.BoardGames)
+    {
+        var sureKodu = game.PlayTimeMinutes <= 30 ? "kisa" : (game.PlayTimeMinutes <= 60 ? "orta" : "uzun");
+        var oyuncuKodu = game.MaxPlayers <= 2 ? "1-2" : (game.MaxPlayers <= 4 ? "3-4" : "5+");
 
-<div class="game-cards"
-     data-title="catan"
-     data-category="strateji"
-     data-time="orta"
-     data-players="3-4">
-    <p class="badge-pos">kategori</p>
-    <p class="d-flex justify-content-center">Oyun İsmi</p>
-    <img src="" alt="resim">
-    <div>
-        <ul>
-            <li>oyun bilgileri</li>
-            <li>kişi</li>
-            <li>süre</li>
-            <li>stok</li>
-        </ul>
-    </div>
+        <div class="game-cards me-5"
+            data-title="@game.Title.ToLower()"
+            data-category="@game.Category?.Name.ToLower()"
+            data-time="@sureKodu"
+            data-players="@oyuncuKodu">
+            <p class="badge-pos">@game.Category?.Name</p>
+            <p class="d-flex justify-content-center">@game.Title</p>
+            <img class="image" src="@game.ImageUrl" alt="resim">
+            <div>
+                <ul>
+                    <li>@game.Description</li>
+                    <li>@game.MinPlayers - @game.MaxPlayers Kişi</li>
+                    <li>@game.PlayTimeMinutes dk</li>
+                    <li>@game.AvailableCopies Stok</li>
+                </ul>
+            </div>
+        </div>
+    }
 </div>
