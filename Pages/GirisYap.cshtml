@@ -20,9 +20,9 @@
             <label asp-for="Input.Password" for="pw">şifre</label>
             <span asp-validation-for="Input.Password" class="text-danger"></span>
         </div>
-        <div class="m-2">
-            <input asp-for="Input.RememberMe" type="checkbox"  id="hatirla">
-            <label for="hatirla">Beni Hatırla</label>
+        <div class="m-2 form-check">
+            <input asp-for="Input.RememberMe" type="checkbox" class="form-check-input" id="rememberMe">
+            <label class="form-check-label" for="rememberMe">Beni Hatırla</label>
         </div>          
     </div>
     <button class="btn-color btn-shape m-0" type="submit">Giriş Yap</button>

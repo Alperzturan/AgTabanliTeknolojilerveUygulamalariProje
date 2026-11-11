@@ -4,25 +4,70 @@
     ViewData["Title"] = "Oyunlar";
 }
 
+
+
 <h1 class="
     d-flex
     justify-content-center">Kutu Oyunu Kütüphanesi</h1>
 
 <div class="my-4 d-flex">
-    <input class="search" type="search" placeholder="Bir oyun ara...">
-    <div class="input-group ms-2">
-        <span class="input-group-text"><i class="bi bi-funnel"></i></span>
-        <select class="filter" name="filter" id="filter">
-            <option value="">Tüm Kategoriler (Filtre)</option>
-            @* @foreach (var cat in Model.Categories) {
-                <option value="@cat.Id">@cat.Name</option>
-            } *@
-        </select>
+    <div class="input-group w-auto">
+        <span class="input-group-text"><i class="bi bi-search"></i></span>
+        <input class="search search-bar" type="search" placeholder="Bir oyun ara...">
     </div>
-    
+    <div class="dropdown ms-2 input-group w-auto">
+        <button class="input-group-text dropdown-toggle" 
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside">
+            <i class="bi bi-funnel"></i>
+        </button>
+        <div class="dropdown-menu p-3 shadow">
+            <div class="d-flex gap-4">
+                <div>
+                    <p class="fw-bold mb-1">Kategori</p>
+                    <div class="form-check">
+                        <input class="form-check-input filter" 
+                                type="checkbox" 
+                                value="strateji" 
+                                name="category"
+                                id="c1">
+                        <label class="form-check-label" for="c1">Strateji</label>
+                    </div>
+                </div>
+                <div>
+                    <p class="fw-bold mb-1">Zaman</p>
+                    <div class="form-check">
+                        <input class="form-check-input filter" 
+                                type="checkbox" 
+                                value="orta" 
+                                name="time"
+                                id="c2">
+                        <label class="form-check-label" for="c2">Orta</label>
+                    </div>
+                </div>
+                <div>
+                    <p class="fw-bold mb-1">Oyuncu Sayısı</p>
+                    <div class="form-check">
+                        <input class="form-check-input filter" 
+                                type="checkbox" 
+                                value="1-2"
+                                name="players"
+                                id="c3">
+                        <label class="form-check-label" for="c3">1-2</label>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
 </div>
 
-<div class="game-cards">
+<div class="game-cards"
+     data-title="catan"
+     data-category="strateji"
+     data-time="orta"
+     data-players="3-4">
     <p class="badge-pos">kategori</p>
     <p class="d-flex justify-content-center">Oyun İsmi</p>
     <img src="" alt="resim">

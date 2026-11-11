@@ -136,18 +136,40 @@ body {
 
 .search {
   width: 500px;
+  border-radius: 5px;
 }
 
-.filter {
+.search:focus {
+  width: 500px;
+  border-radius: 5px;
+  outline: none;
+}
+
+.search-bar {
   color: #2B1E16;
   background-color: #FFFFFF;
   border: 1px solid #2B1E16;
   border-left: none;
+  border-radius: 5px;
 }
 
 .input-group-text {
   color: #2B1E16;
-  background-color: #D97706;
+  background-color: #FAF6F0;
   border: 1px solid #2B1E16;
-  border-right: none;
+}
+
+.form-check-input:checked {
+    background-color: #D97706;
+    border-color: #D97706;
+}
+
+.form-check-input:focus {
+    border-color: #D97706;
+    box-shadow: 0 0 0 0;
+    outline: none;
+}
+
+.image {
+  object-fit: fill;
 }
