@@ -6,13 +6,13 @@
 
 <div class="d-flex flex-row flex-wrap justify-content-center gap-4 my-4">
     <div class="profile-box">
-        <p>adsoyad</p>
-        <p>email</p>
-        <p>telefon</p>
-        <p>kayıttarihi</p>
-        <p>müşteri/çalışan</p>
-        <form method="post" asp-page-handler="Logout">
-            <button type="submit" class="btn btn-danger">Çıkış Yap</button>
+        <h4 class="d-flex justify-content-center">@Model.CurrentUser?.FullName</h4>
+        <p><strong>E-mail: </strong>@Model.CurrentUser?.Email</p>
+        <p><strong>Telefon Numarası: </strong>@(Model.CurrentUser?.PhoneNumber ?? "Belirtilmemiş")</p>
+        <p><strong>Kayıt Tarihi: </strong>@Model.CurrentUser?.CreatedAt.ToString("dd.MM.yyyy")</p>
+        <p><strong>Rol: </strong>@string.Join(", ", Model.Roles)</p>
+        <form class="d-flex justify-content-center" method="post" asp-page-handler="Logout">
+            <button type="submit" class="btn-shape btn-color-profile">Çıkış Yap</button>
         </form>
     </div>
     <div class="profile-box">
