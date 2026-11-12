@@ -249,3 +249,39 @@ body {
   border-color: #D97706;
   transition: ease-in 0.2s;
 }
+
+@media (max-width: 768px) {
+    .search, .search:focus {
+        width: 65vw;
+    }
+
+    .dropdown-menu .d-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .dropdown-menu .border-end {
+        border-right: none !important;
+        border-bottom: 1px solid #dee2e6;
+        padding-bottom: 8px;
+    }
+
+    .text-box .w-50 {
+        width: 100% !important;
+    }
+
+    .text-box {
+        margin: 15px 10px;
+        padding: 15px;
+    }
+
+    .membership-box, .profile-box {
+        width: 92vw;
+        margin: 15px auto;
+        padding: 15px;
+    }
+
+    .list-items-shape {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+}

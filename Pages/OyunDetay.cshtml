@@ -5,7 +5,7 @@
 }
 
 @if (Model.BoardGame != null) { 
-    <div class="text-box d-flex flex-row gap-4">
+    <div class="text-box d-flex flex-column flex-md-row gap-4">
         <p class="badge-pos fs-4 py-2 px-3">@Model.BoardGame.Category?.Name</p>
         <div class="d-flex justify-content-center w-50">
             <img class="img-fluid" src="@Model.BoardGame.ImageUrl" alt="GameImage">
