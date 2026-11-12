@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@using Michelangelo_s_Board_Game_Cafe.Models
+@inject UserManager<AppUser> UserManager
+
+<!DOCTYPE html>
 <html lang="tr">
 <head>
     <meta charset="utf-8" />
@@ -59,9 +63,10 @@
                     <ul class="list-items-shape">
                         @if (User.Identity?.IsAuthenticated == true)
                         {
+                            AppUser? currentUser = await UserManager.GetUserAsync(User);
                             <li class="btn-shape btn-color">
                                 <a class="nav-link text-dark" asp-area="" asp-page="/Profil">
-                                    👤 @User.Identity.Name
+                                    👤 @(currentUser?.FullName ?? User.Identity.Name)
                                 </a>
                             </li>
                         }
