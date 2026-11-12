@@ -23,7 +23,7 @@
             <div class="d-grid gap-3 text-nowrap" style="grid-template-columns: repeat(3, 1fr);">
                 <div class="border-end pe-3">
                     <p class="fw-bold mb-1">Kategori</p>
-                    @foreach (var cat in Model.Categories)
+                    @foreach (Models.Category cat in Model.Categories)
                     {
                         <div class="form-check">
                             <input class="form-check-input filter" 
@@ -38,13 +38,13 @@
                 <div class="border-end pe-3">
                     <p class="fw-bold mb-1">Zaman</p>
                     @{
-                        var zamanlar = new[] {
+                        (string, string)[]? zamanlar = new[] {
                             ("kisa", "Kısa (<30dk)"),
                             ("orta", "Orta (30-60dk)"),
                             ("uzun", "Uzun (>60dk)")
                         };
                     }
-                    @foreach (var (kod, etiket) in zamanlar)
+                    @foreach ((string? kod, string? etiket) in zamanlar)
                     {
                         <div class="form-check">
                             <input class="form-check-input filter" 
@@ -59,13 +59,13 @@
                 <div>
                     <p class="fw-bold mb-1">Oyuncu Sayısı</p>
                     @{
-                        var oyuncular = new[] {
+                        (string, string)[]? oyuncular = new[] {
                             ("1-2", "1-2"),
                             ("3-4", "3-4"),
                             ("5+", "5+")
                         };
                     }
-                    @foreach (var (kod, etiket) in oyuncular)
+                    @foreach ((string? kod, string? etiket) in oyuncular)
                     {
                         <div class="form-check">
                             <input class="form-check-input filter" 
@@ -81,29 +81,29 @@
         </div>
     </div>
 </div>
-<div class="d-flex">
-    @foreach (var game in Model.BoardGames)
+<div class="d-flex flex-wrap justify-content-center gap-5">
+    @foreach (Models.BoardGame game in Model.BoardGames)
     {
-        var sureKodu = game.PlayTimeMinutes <= 30 ? "kisa" : (game.PlayTimeMinutes <= 60 ? "orta" : "uzun");
-        var oyuncuKodu = game.MaxPlayers <= 2 ? "1-2" : (game.MaxPlayers <= 4 ? "3-4" : "5+");
+        string sureKodu = game.PlayTimeMinutes <= 30 ? "kisa" : (game.PlayTimeMinutes <= 60 ? "orta" : "uzun");
+        string oyuncuKodu = game.MaxPlayers <= 2 ? "1-2" : (game.MaxPlayers <= 4 ? "3-4" : "5+");
 
-        <div class="game-cards me-5"
+        <div class="game-cards"
             data-title="@game.Title.ToLower()"
             data-category="@game.Category?.Name.ToLower()"
             data-time="@sureKodu"
             data-players="@oyuncuKodu">
             <p class="badge-pos">@game.Category?.Name</p>
-            <p class="d-flex justify-content-center">@game.Title</p>
+            <h5 class="d-flex justify-content-center fw-bold">@game.Title</h5>
             <img class="image" src="@game.ImageUrl" alt="resim">
             <div>
-                <ul>
+                <ul class="list-items-shape-games">
                     <li>@game.Description</li>
-                    <li>@game.MinPlayers - @game.MaxPlayers Kişi</li>
-                    <li>@game.PlayTimeMinutes dk</li>
-                    <li>@game.AvailableCopies Stok</li>
+                    <li><i class="bi bi-people-fill"></i> : @game.MinPlayers - @game.MaxPlayers Kişi</li>
+                    <li><i class="bi bi-clock"></i> : @game.PlayTimeMinutes dk</li>
+                    <li><i class="bi bi-box-seam"></i> : @game.AvailableCopies Stok</li>
                 </ul>
             </div>
-            <button class="btn-shape btn-color" 
+            <button class="btn-shape-game btn-color-game" 
                     onclick="location.href='/OyunDetay?id=@game.Id'
                     ">Detaylı İncele</button>
         </div>

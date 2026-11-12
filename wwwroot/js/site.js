@@ -6,7 +6,7 @@
     if (gameCards.length === 0) return
 
     const filterGames = ()=>{
-        const searchText = searchInput ? searchInput.value.trim() : "";
+        const searchText = searchInput ? searchInput.value.trim().toLowerCase() : "";
 
         const activeFilters = {};
         checkboxes.forEach(cb => {

@@ -65,14 +65,22 @@ body {
 
 .game-cards {
   border: solid #2B1E16 3px;
-  border-radius: 4px;
+  border-radius: 10px;
   height: auto;
   background-color: #FFFFFF;
-  max-width: 250px;
+  width: 260px;
   overflow-wrap: break-word;
   hyphens: auto;
-  padding: 10px;
+  padding: 25px 5px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.game-cards:hover {
+  transform: translateY(-5px);
+  border-color: #D97706;
+  transition: 0.25s ease;
 }
 
 .badge-pos {
@@ -82,6 +90,17 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  background-color: #2B1E16;
+  color: #FAF6F0;
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  border-bottom-right-radius: 8px;
+  border-top-left-radius: 6px;
+}
+
+.game-cards:hover .badge-pos {
+  background-color: #D97706;
+  transition: 0.25s ease;
 }
 
 .masa-cards {
@@ -172,4 +191,41 @@ body {
 
 .image {
   max-width: 100%;
+  margin-bottom: 2px;
+  height: 200px;
+  object-fit: contain;
+  background-color: #FAF6F0;
+  border-radius: 8px;
+}
+
+.list-items-shape-games {
+  margin: 0;
+  padding: 0; 
+  list-style: none;
+  align-items: start;
+  margin: 8px;
+}
+
+.btn-color-game {
+  background-color: #2B1E16;
+  color: #FAF6F0;
+  border-color: #2B1E16;
+}
+
+.btn-shape-game {
+  border-radius: 5px;
+  margin: 3px;
+  padding: 7px;
+}
+
+.game-cards:hover .btn-color-game {
+  background-color: #D97706;
+  color: #2B1E16;
+  border-color: #D97706;
+  transition: ease-in 0.2s;
+}
+
+.game-cards:hover .btn-color-game:hover {
+  background-color: #FAF6F0;
+  transition: ease-in 0.2s;
 }
