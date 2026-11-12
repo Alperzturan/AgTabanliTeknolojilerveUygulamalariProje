@@ -15,6 +15,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
 }
 
 .btn-color {
@@ -234,4 +235,17 @@ body {
   background-color: hsl(0, 100%, 25%);
   border-color: hsl(0, 100%, 25%);
   transition: 0.2s ease;
+}
+
+.btn-color-detail {
+  background-color: #2B1E16;
+  color: #FAF6F0;
+  border-color: #2B1E16;
+}
+
+.btn-color-detail:hover {
+  background-color: #D97706;
+  color: #2B1E16;
+  border-color: #D97706;
+  transition: ease-in 0.2s;
 }
