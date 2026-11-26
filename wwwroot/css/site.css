@@ -301,6 +301,48 @@ body {
   color: #991b1b;
 }
 
+.catalog-count-badge {
+  color: #6b5748;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.btn-clear-filters {
+  background-color: #FAF6F0;
+  color: #2B1E16;
+  border: 1px solid #D97706;
+  border-radius: 5px;
+  height: 38px;
+  padding: 0 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-clear-filters:hover {
+  background-color: #D97706;
+  color: #FFFFFF;
+  transition: 0.2s ease;
+}
+
+.empty-catalog-box {
+  background-color: #FFFFFF;
+  color: #2B1E16;
+  border: 3px dashed #2B1E16;
+  border-radius: 15px;
+  max-width: 480px;
+  margin: 40px auto;
+  padding: 32px 24px;
+  text-align: center;
+}
+
+.empty-catalog-box i.bi-search {
+  font-size: 2.5rem;
+  color: #D97706;
+}
+
 .list-items-shape-games {
   margin: 0;
   padding: 0; 
