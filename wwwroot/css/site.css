@@ -72,7 +72,7 @@ body {
   width: 260px;
   overflow-wrap: break-word;
   hyphens: auto;
-  padding: 25px 5px;
+  padding: 28px 10px 12px 10px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -197,6 +197,108 @@ body {
   object-fit: contain;
   background-color: #FAF6F0;
   border-radius: 8px;
+}
+
+.wiki-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #FAF6F0;
+  color: #2B1E16;
+  border-left: 2px solid #2B1E16;
+  border-bottom: 2px solid #2B1E16;
+  border-bottom-left-radius: 8px;
+  border-top-right-radius: 6px;
+  padding: 3px 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.game-cover-wrapper {
+  width: 100%;
+  height: 200px;
+  background-color: #FAF6F0;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.game-cover-wrapper .image {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 0;
+  object-fit: contain;
+}
+
+.image-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: #6b5748;
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 12px;
+}
+
+.image-fallback i {
+  font-size: 2.5rem;
+  color: #D97706;
+}
+
+.game-title-wrapper {
+  height: 3.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.game-title-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.game-desc-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  min-height: 3.8em;
+  margin: 4px 8px 10px 8px;
+  color: #2B1E16;
+}
+
+.stock-pill {
+  display: inline-block;
+  padding: 1px 8px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.stock-available {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.stock-out {
+  background-color: #fee2e2;
+  color: #991b1b;
 }
 
 .list-items-shape-games {
